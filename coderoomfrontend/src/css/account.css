@@ -1,0 +1,84 @@
+
+.account-main {
+    width: 100%;
+    min-height: 100vh;
+    color: #eee;
+    padding-top: 34px;
+}
+
+.account-main__profile-section {
+    min-width: 100%;
+    max-height: 350px;
+}
+
+.account-profile-section {
+}
+
+.account-profile-section__header {
+    height: 280px;
+    background: #242428;
+}
+
+.account-profile-section__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -140px;
+}
+
+.account-profile-section__fio {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    margin-bottom: 7px;
+}
+
+.account-profile-section__nickname {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.account-profile-section__profile-image-wrapper {
+    background: #242428;
+    width: 134px;
+    height: 134px;
+    border-radius: 10px;
+    border: 4px solid #464646;
+    cursor: pointer;
+}
+
+.account-profile-section__profile-image {
+    border-radius: 6px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.account-main__items-section {
+    width: 1280px;
+    margin: 0 auto 120px auto;
+}
+
+.account-items-section__loyaut {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 40px; 
+}
+
+
+.account-items-section__title {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+    text-align: center;
+}
+
+.account-items__add-editor-wrapper {
+    font-size: 20px;
+    font-weight: bolder;
+}

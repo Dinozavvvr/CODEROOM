@@ -1,0 +1,17 @@
+.aylana {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-top: 6px solid #00ff00;
+    animation: loader 1s linear infinite;
+    animation-direction: all;
+}
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}

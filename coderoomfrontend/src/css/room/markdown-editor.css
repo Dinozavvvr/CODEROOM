@@ -1,0 +1,48 @@
+/* ========================
+    markdown prewiew styles
+    overriding
+=========================*/
+
+.markdown-body {
+    box-sizing: border-box;
+    padding: 20px;
+
+    /* font-styles */
+    font-family: 'JetBrains Mono' !important;
+    font-weight: 500;
+
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.markdown-body strong {
+    font-weight: 800 !important;
+}
+
+.markdown-body ul li {
+    list-style: disc;
+}
+
+.markdown-body ol li {
+    list-style: decimal;
+}
+
+/* code block restyling */
+
+.markdown-body *::-webkit-scrollbar {
+    height: 0px !important;
+}
+
+.markdown-body pre div {
+
+    /* font-styles */
+    font-size: 18px;
+    font-weight: 800;
+    
+    border-radius: 10px;
+}
+
+.markdown-body pre div code {
+    /* font-styles */
+    font-family: 'JetBrains Mono', sans-serif !important;
+}

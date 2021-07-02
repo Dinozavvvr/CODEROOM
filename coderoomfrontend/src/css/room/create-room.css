@@ -1,0 +1,1064 @@
+/* ========================
+    variables
+========================= */
+
+:root {
+    /* color-properties */
+    --font-color: #eee;
+    --font-size: 20px;
+    --font-weight: bold;
+    --font-style: normal;
+
+    /* builder-properties */
+    --background-color: #333335;
+    --no-active-bg-color: #464646;
+    --active-bg-color: #00ff00;
+    --active-text-color: #000;
+
+    --block-bg-color: #242428;
+}
+
+/* ========================
+    main block styles
+======================== */
+
+.create-room-main {
+    min-height: calc(100vh - 70px); /* 70px is header height */
+    width: min(100vw, 1519px); /* equivalent for max-width: 1519px */
+
+    margin: 0 auto;
+
+    /* main block font styles */
+    font-family: 'Comfortaa', sans-serif;
+    font-style: var(--font-style);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    color: var(--font-color);
+}
+
+/* ========================
+    title styles
+======================== */
+
+.create-room-main__title {
+    margin: 50px 0;
+
+    text-align: center;
+
+    /* title font styles */
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+/* =========================
+    builder styles
+==========================*/
+
+.create-room-main__buider {
+    position: relative;
+    width: min(100vw, 1070px);
+    
+    margin: 10px auto 100px auto;
+    padding: 24px;
+
+    background: var(--background-color);
+    border-radius: 10px;
+}
+
+/* ============================
+    builder first-block styles
+==============================*/
+
+/* room name text */
+.create-room-builder__room-name {
+    margin: 0 0 16px 0;
+
+    font-size: 36px;
+}
+
+/* set room name input wrapper */
+.create-room-builder__room-name-wrapper {
+    display: flex;
+}
+
+/* set room name input */
+.create-room-builder__room-name-input {
+    height: 60px;
+
+    flex-grow: 1;
+
+    padding: 0 15px;
+
+    background: var(--no-active-bg-color);
+    border-radius: 5px 0px 0px 5px;
+
+    /* input font styles */
+    font-family: 'Comfortaa', sans-serif;
+    font-style: var(--font-style);
+    font-weight: var(--font-weight);
+    font-size: 36px;
+    color: var(--font-color);
+}
+
+.create-room-builder__room-name-input::placeholder {
+}
+
+/* change acess button modificator */
+.create-room-builder__change-access {
+    align-self: stretch;
+    
+    display: flex;
+    align-items: center;
+
+    padding: 0 15px;
+
+    background: var(--no-active-bg-color);
+    border-radius: 0px 5px 5px 0px;
+
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.create-room-builder__change-access:hover {
+    background: var(--active-bg-color);
+    
+    /* font styles */
+    color: var(--active-text-color);
+}
+
+/* modificator lock */
+.create-room-builder__lock {
+    margin: 0 15px 0 0;
+
+    fill: #eee;
+
+    transition: .5s ease;
+}
+
+/* modificator lock on hover on access button */
+.create-room-builder__change-access:hover .create-room-builder__lock {
+    fill: #000;
+}
+
+/* =======================================
+    builder select-languages-block styles
+=========================================*/
+
+/* block styles */
+.create-room-builder__select-language-block {
+    margin: 50px 0 0 0;
+}
+
+/* title styles */
+.create-room-builder__block-title {
+    margin: 0 0 16px 0;
+
+    text-align: center;
+}
+
+/* languages styles */
+.create-room-builder__languages {
+    padding: 24px;
+
+    background: var(--block-bg-color);
+    border-radius: 10px;
+}
+
+
+/* base language button in file:
+    language-item.css */
+.create-room-builder__language {
+    margin: 5px;
+}
+
+/* ====================================
+    project information block styles
+==================================== */
+
+.create-room-builder__project-information {
+    margin: 35px 0 0 0;
+}
+
+/* prompt styles */
+.create-room-buider__prompt {
+    position: relative;
+
+    margin: 35px 0 0 0;
+    padding: 0 0 0 30px;
+
+    /* font styles */
+    font-size: 14px;
+    color: #C4C4C4;
+}
+
+/* icon for prompt */
+.create-room-buider__prompt:before {
+    position: absolute;
+    content: url('../../images/icons/info_green.svg');
+
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* block styles */
+.create-room-builder__information-block {
+    margin-top: 16px;
+}
+
+/* common blocks styles */
+.create-room-builder__project-information-block {
+    position: relative;
+
+    overflow: hidden;
+    min-height: 145px;
+
+    background: var(--block-bg-color);
+    border-radius: 10px;
+
+    transform: scale(1.0);
+    transition: .2s ease;
+}
+
+/* shake block on delete */
+.create-room-builder__project-information-block-shake {
+    animation: shake-block 1s .2s cubic-bezier(.36,.07,.19,.97) infinite;
+    transform-origin: center top;
+    transform: scale(1.01);
+    box-shadow:
+        -5px -5px 8px rgba(0, 0, 0, .1),
+        5px 0px 8px rgba(0, 0, 0, .1),
+            -10px -10px 30px rgba(0, 0, 0, .1);
+}
+
+@keyframes shake-block {
+    0% {
+        transform: scale(1.01);
+    }
+    10%, 90% {
+      transform: scale(1.01) translate3d(-0.5px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: scale(1.01) translate3d(1px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: scale(1.01) translate3d(-2px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: scale(1.01) translate3d(2px, 0, 0);
+    }
+    100% {transform: scale(1.01);}
+  }
+
+/* block header */
+.create-room-builder-info-block-header {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 10px;
+}
+
+/* header title */
+.create-room-builder-info-block-header__title {
+    position: relative;
+
+    /* font styles */
+    font-size: 14px;
+}
+
+/* header title underline */
+.create-room-builder-info-block-header__title:before {
+    position: absolute;
+    content: '';
+    
+    transform: translateY(20px);
+
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--active-bg-color);
+    border-radius: 2px;
+}
+
+/* header buttons wrapper */
+.create-room-builder-info-block-header__buttons {
+    display: flex;
+}
+
+/* delete-button */
+.create-room-builder-info-block-header__delete {
+    margin: 0 4px 0 0;
+}
+
+.create-room-builder-info-block-header__buttons svg {
+    fill: var(--font-color);
+
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.create-room-builder-info-block-header__buttons svg:hover {
+    fill: var(--active-bg-color);
+}
+
+.create-room-builder-info-block-header__settings-active svg {
+    fill: var(--active-bg-color);
+}
+
+/* settings */
+.create-room-builder-info-block__settings {
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+    top: 45px;
+
+    box-sizing: border-box;
+
+    white-space: nowrap;
+    overflow: hidden;
+    
+    /* font-styles */
+    font-size: 14px;
+    color: var(--font-color);
+    background: var(--block-bg-color);
+    border: 4px transparent solid;
+    border-radius: 10px;
+
+    transform-origin: right top;
+    transform: scale(0);
+    transition: .3s ease;
+}
+
+/* settings on click */
+.create-room-builder-info-block__settings-active {
+    transform: scale(1);
+
+    padding: 10px;
+
+    border: 3px var(--active-bg-color) solid;
+    box-shadow: 0 0 0 5px var(--block-bg-color);
+}
+
+/* settings item */
+.create-room-builder-info-block__settings-item {
+
+    margin: 3px 0;
+    padding: 5px;
+    
+    text-align: center;
+
+    background: var(--no-active-bg-color);
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    transition: .5s ease;
+}
+
+.create-room-builder-info-block__settings-item-active {
+    opacity: 0.5;
+    
+    color: var(--active-text-color);
+    background: var(--active-bg-color);
+
+    cursor:unset;
+}
+
+.create-room-builder-info-block__settings-item:hover {
+    color: var(--active-text-color);
+    background: var(--active-bg-color);
+}
+
+
+
+/* 
+    ============= plain-block-props ============== 
+*/
+
+/* plain textarea styles */
+.create-room-builder-project-information__plain-text-block {
+    resize: none;
+    width: 100%;
+    min-height: 100px;
+
+    overflow: hidden;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px 20px 20px;
+    
+    line-height: 30px;
+    border-radius: 10px;
+
+    /* font styles */
+    font-family: 'Comfortaa', sans-serif;
+    font-style: var(--font-style);
+    font-weight: var(--font-weight);
+    font-size: 18px;
+    color: var(--font-color);
+}
+
+/* plain textarea on focus */
+.create-room-builder-project-information__plain-text-block:focus {
+    outline: none;
+}
+
+/* font-size */
+.create-room-builder-project-information__plain-text-block-font-size {
+    padding: 10px;
+    /* font-styles */
+    font-size: 12px;
+    color: #C4C4C4;
+}
+
+/* 
+    ============= markdown-block-props ============== 
+*/
+
+/* markdown editor styles */
+.create-room-builder__markdown-block-wrapper {
+    box-sizing: border-box;
+    
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    align-content: stretch;
+    
+    padding: 5px 20px;
+}
+
+.create-room-builder__markdown-editor {
+    margin: 0 10px 0 0;
+
+    /* font-styles */
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.create-room-builder__markdown-editor .CodeMirror {
+    box-sizing: border-box;
+    padding: 10px 0;
+    
+    border-radius: 10px;
+}
+
+.create-room-builder__markdown-editor .CodeMirror,
+.create-room-builder__markdown-editor .CodeMirror-gutters
+{
+    /* font-styles */
+    font-weight: normal;
+    font-family: 'JetBrains Mono', sans-serif !important;
+    /* background: var(--block-bg-color) !important; */
+}
+.create-room-builder__markdown-editor .CodeMirror-linenumber {
+    /* color: rgba(255, 255, 255, .3); */
+}
+
+/* 
+    ================= Github-gist-props ==================
+*/
+
+/* set gist styles */
+.create-room-builder-gist-block__set-gist-wrapper {
+    margin: 0 0 20px 0;
+}
+
+.create-room-builder__gist-block {
+    margin: 20px 20px 0 20px;
+}
+
+.create-room-builder-gist-block__set-gist-label {
+
+    /* font-styles */
+    font-family: 'Comfortaa', sans-serif;
+    font-style: var(--font-style);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    color: #C4C4C4;
+}
+
+/* input styles */
+.create-room-builder-gist-block__set-gist {
+    display: block;
+
+    margin: 10px 0 0 0;
+    padding: 0 10px;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+
+    /* font-styles */
+    font-family: 'Comfortaa', sans-serif;
+    font-style: var(--font-style);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    color: var(--font-color);
+
+    background: var(--no-active-bg-color);
+    border-radius: 5px;
+
+    transition: .3s ease;
+}
+
+/* on hover */
+.create-room-builder-gist-block__set-gist:hover {
+    background: var(--active-bg-color);
+    color: var(--active-text-color);
+}
+
+.create-room-builder-gist-block__set-gist:hover::placeholder {
+    color: #000;
+}
+
+/* on focus */
+.create-room-builder-gist-block__set-gist:focus {
+    background: var(--active-bg-color);
+    color: var(--active-text-color);
+}
+
+.create-room-builder-gist-block__set-gist:focus::placeholder {
+    color: #000;
+}
+
+/* iframe styles */
+.iframe {
+    position: relative;
+    
+    width: 100%;
+    height: auto;
+    
+    box-sizing: border-box;
+    
+    border-radius: 10px;
+}
+
+/* 
+    ================ add block =================
+*/
+
+.create-room-builder__add-block {
+    height: 45px;
+    
+    margin: 16px 0 0 0;
+    
+    /* font-styles */
+    line-height: 45px;
+    text-align: center;
+    
+    background: var(--block-bg-color);
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.create-room-builder__add-block:hover {
+    background: var(--active-bg-color);
+    color: var(--active-text-color);
+}
+
+
+
+/* =========================
+    editors block styles
+===========================*/
+
+.create-room-builder__editors-block {
+    margin: 35px 0 0 0;
+}
+
+.create-room-builder__editors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+/* add editor button */
+.create-room-builder__add-editor-wrapper {
+    display: flex;
+    align-items: center;
+
+    padding: 20px
+}
+.create-room-builder__add-editor {
+    width: 100%;
+    aspect-ratio: 16/9;
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    background: var(--block-bg-color);
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+/* on hover */
+.create-room-builder__add-editor:hover {
+    background: var(--active-bg-color);
+    color: var(--active-text-color);
+
+    opacity: 0.8;
+}
+
+
+/* ==============================
+    contributors block styles
+============================== */
+
+.create-room-builder__contributors-block {
+    margin: 35px 0 0 0;
+}
+
+.create-room-builder__contributors {
+    margin: 35px 0 0 0;
+    padding: 30px 50px;
+
+    background: var(--block-bg-color);
+    border-radius: 10px;
+}
+
+/* contributors item style */
+.create-room-builder__contributor-wrapper {
+    overflow: hidden;
+    display:inline-block;
+    width: 60px;
+    aspect-ratio: 1 / 1;
+
+    margin: 6px;
+
+    background: #C4C4C4;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.create-room-builder__contributor-wrapper:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,.5) inset;
+}
+
+.create-room-builder__contributor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+}
+
+/* add contributor */
+
+/* on hover */
+.create-room-builder__add-contributor:hover {
+    background: var(--active-bg-color);
+    box-shadow: none;
+}
+
+
+/* ==============================
+    add contributor search
+============================== */
+
+.create-room-builder__search {
+    position: fixed;
+    z-index: 1000;
+    bottom: -100%;
+    left: 50%;
+
+    box-sizing: border-box;
+    width: inherit;
+    height: calc(100vh - 80px);
+
+    margin: 40px 0;
+    /* padding: 20px; */
+
+    background: rgba(255,255,255,.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    backdrop-filter: blur(10px) saturate(80%) contrast(130%) brightness(40%);
+
+    transform: scale(1.0) translate(-50%);
+    transform-origin: center left;
+
+    transition: 0.5s ease;
+}
+
+.create-room-builder__search-active {
+    bottom: 0;
+    transition: 0.3s ease;
+}
+
+/* close span */
+.create-room-builder__search-close {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: #242428;
+    transform: translate(50%, -50%);
+    transition: .2s ease;
+
+    cursor: pointer;
+}
+
+.create-room-builder__search-close:hover {
+    background: red;
+    border: 1px transparent solid;
+}
+
+.create-room-builder__search-close:before,
+.create-room-builder__search-close:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 20px;
+    height: 2px;
+
+    border-radius: 1px;
+
+    background: #C4C4C4;
+    transition: .2s ease;
+}
+.create-room-builder__search-close:before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.create-room-builder__search-close:after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.create-room-builder__search-close:hover:before,  
+.create-room-builder__search-close:hover:after {
+    background: #fff;
+}
+
+/* header */
+.create-room-builder__search-header {
+    display: flex;
+
+    padding: 20px 20px 0 20px;
+}
+
+.create-room-builder__search-input-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+/* search input */
+.create-room-builder__search-input {
+    display: block;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 45px;
+    
+    padding: 0 20px;
+
+    /* font-styles */
+    font-family: 'Comfortaa', sans-serif;
+    font-style: var(--font-style);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    color: var(--font-color);
+
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    backdrop-filter: blur(5px) saturate(70%) contrast(120%) brightness(110%);
+}
+
+.create-room-builder__search-input::placeholder {
+    color: var(--font-color);
+}
+
+/* 
+.create-room-builder__search-input-placeholder {
+    position: absolute;
+    top: 0;
+    padding: 12px 0 0 20px;
+
+    transition: .1s ease;
+    transform-origin: left top;
+}
+
+.create-room-builder__search-input:focus + .create-room-builder__search-input-placeholder {
+    padding: 0;
+    top: -12px;
+    transform: scale(0.6);
+    color: var(--active-bg-color);
+} */
+
+/* search button */
+
+.create-room-builder__search-button {
+    box-sizing: border-box;
+
+    margin: 0 0 0 10px;
+    padding: 12px;
+
+    background: var(--background-color);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.create-room-builder__search-button:hover {
+    background: var(--active-bg-color);
+    color: #000;
+    border: 1px transparent solid;
+}
+
+/* users */
+.create-room-builder__search-users {
+    /* box-sizing: border-box; */
+    display: grid;
+    border-radius: 20px/60px;
+    gap: 10px;
+
+    margin: 0 10px 10px 10px;
+    padding: 10px;
+
+    max-height: calc(100% - 150px);
+
+    margin: 40px 10px 20px 10px;
+
+    overflow: auto;
+}
+
+.create-room-builder__search-users::-webkit-scrollbar {
+    height: 0;
+    width: 5px;
+}
+
+.create-room-builder__search-users::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.create-room-builder__search-users::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+}
+
+
+.create-room-builder__user {
+    display: flex;
+
+    padding: 10px;
+
+    background: rgba(255,255,255,.01);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2); */
+    border-radius: 10px;
+
+    /* backdrop-filter: blur(5px) saturate(100%) contrast(80%) brightness(110%); */
+}
+
+.create-room-builder__user-image-wrapper {
+    width: 60px;
+    height: 60px;
+
+    overflow: hidden;
+    
+    background: #C4C4C4;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.create-room-builder__user-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.create-room-builder__user-info {
+    flex-grow: 1;
+    align-self: center;
+
+    margin: 0 20px 0 20px;
+}
+
+.create-room-builder__user-nickname {
+    /* font-styles */
+    font-family: 'JetBrains Mono', serif;
+    font-weight: bolder;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.create-room-builder__user-fio {
+    font-size: 18px;
+}
+
+.create-room-builder__user-add {
+    align-self: center;
+
+    padding: 12px;
+
+    background: var(--background-color);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.create-room-builder__user-add:hover {
+    background: var(--active-bg-color);
+    color: #000;
+    border: 1px transparent solid;
+}
+
+
+
+/* =======================
+        workspace item
+======================== */
+
+.create-room-builder__workspace-delete-button {
+    display: block;
+
+    height: 45px;
+    margin: 35px 0 0 20px;
+
+    background: var(--block-bg-color);
+    border-radius: 10px;
+    
+    line-height: 45px;
+    text-align: center;
+
+    cursor: pointer;
+    
+    transition: .5s ease;
+}
+
+
+
+.create-room-builder__workspace-delete-button:hover {
+    background: var(--active-bg-color);
+    color: #000;
+}
+
+/* =========================
+    workspace search item
+========================== */
+
+.create-room-builder__workspace {
+    display: flex;
+
+    padding: 10px;
+
+    background: rgba(255,255,255,.01);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2); */
+    border-radius: 10px;
+
+    /* backdrop-filter: blur(5px) saturate(100%) contrast(80%) brightness(110%);     */
+}
+
+.create-room-builder__workspace-image-wrapper {
+    width: 90px;
+    height: 60px;
+
+    overflow: hidden;
+    
+    background: #C4C4C4;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.create-room-builder__workspace-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.create-room-builder__workspace-info {
+    flex-grow: 1;
+    align-self: center;
+
+    margin: 0 20px 0 20px;
+}
+
+.create-room-builder__workspace-title {
+    /* font-styles */
+    font-family: 'JetBrains Mono', serif;
+    font-weight: bolder;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.create-room-builder__workspace-subtitle {
+    font-size: 18px;
+}
+
+.create-room-builder__workspace-add {
+    align-self: center;
+
+    padding: 12px;
+
+    background: var(--background-color);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.create-room-builder__workspace-add:hover {
+    background: var(--active-bg-color);
+    color: #000;
+    border: 1px transparent solid;
+}
+
+
+/* ====================================
+            save button styles
+===================================== */
+
+.create-room-builder__post {
+    margin: 35px 0 0 0;
+
+    text-align: center;
+    line-height: 45px;
+    
+    background: var(--block-bg-color);
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.create-room-builder__post:hover {
+    color: var(--active-text-color);
+    background: var(--active-bg-color);
+}

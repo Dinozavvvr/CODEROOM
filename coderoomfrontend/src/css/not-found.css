@@ -1,0 +1,47 @@
+.not-found__main {
+    width: 100%;
+    min-height: calc(100vh - 190px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found__text-wrapper {
+    display: flex;
+
+    width: 400px;
+
+    color: #fff;
+    line-height: 30px;
+    font-size: 18px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.not-found__text-wrapper > span {
+    color: #c4c4c4;
+    margin-right: 10px;
+}
+
+.not-found__typing-text {
+    display: inline-block;
+    font-size: 24px;
+    
+    width: calc(24 * 1ch);
+    animation: typing 3s steps(24), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+  }
+  
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}

@@ -1,0 +1,26 @@
+@import url('./signup.css');
+
+
+.form__remember {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 4px solid #5A5B63;
+    background: #484B55;
+    color: #00ff00;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.form__remember:hover {
+    color: #000;
+    background: #00ff00;
+}
+
+.login-main__form-back {
+    height: 450px;
+}

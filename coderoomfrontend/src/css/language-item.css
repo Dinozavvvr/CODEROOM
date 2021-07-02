@@ -1,0 +1,22 @@
+/* ===========================
+    button styles
+============================ */
+
+.language-item {
+    display: inline-block;
+
+    padding: 12px;
+    
+    background: var(--no-active-bg-color);
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* on hover */
+.language-item:hover {
+    color: var(--active-text-color);
+    background: var(--active-bg-color);
+}
+

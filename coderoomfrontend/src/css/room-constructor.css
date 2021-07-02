@@ -1,0 +1,62 @@
+body {
+    /* background: #ccc; */
+    scroll-behavior: smooth;
+}
+
+.room-constructor__main {
+    background: #ccc;
+    min-height: calc(100vh - 70px);
+    font-size: 20px;
+    font-family: 'Comfortaa';
+    font-weight: bold;
+}
+
+.room-constructor__item {
+    
+
+    min-height: 100px;
+    background: #eee;
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    box-sizing: content-box;
+}
+
+.room-constructor__textarea {
+    /* background: red; */
+    padding: 20px;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    min-height: 100px;
+
+    line-height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Comfortaa';
+    font-weight: bold;
+}
+
+.room-constructor__textarea:focus {
+    outline: none;
+}
+
+.room-constructor__add-item {
+    cursor: pointer;
+    min-height: 50px;
+    background: #eee;
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease;
+
+    margin-bottom: 100px;
+}
+
+.room-constructor__add-item:hover {
+    background: #00ff00;
+}

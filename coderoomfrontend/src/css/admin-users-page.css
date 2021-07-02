@@ -1,0 +1,273 @@
+.admin-users-page-main {
+    min-height: 100vh;
+    max-width: 1519px;
+    margin: 0 auto;
+}
+
+.admin-users-page-main__grid {
+    margin: 100px 20px;
+}
+
+.admin-users-page-grid {
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr minmax(65%, auto) 1fr;
+    gap: 33px;
+    /* background: grey; */
+}
+
+.admin-users-page-grid__users-block {
+    grid-column-start: 2;
+}
+
+.admin-users-page-grid__options-block {
+}
+
+.admin-users-page-user {
+    background: #242428;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    padding: 13px;
+    color: #eee;
+    width: 920px;
+    display: grid;
+    height: 66px;
+    /* grid-template-columns: auto 1fr 150px; */
+    display: flex;
+
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.admin-users-page-user__image-wrapper {
+    cursor: pointer;
+    width: 66px;
+    height: 66px;
+    background: #c4c4c4;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.admin-users-page-user__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.admin-users-page-user__info {
+    flex-grow: 1;
+    transition: 0.3s ease;
+    height: 100%;
+    margin: 0 15px;
+}
+
+.admin-users-page-user__nickname {
+    font-family: JetBrains Mono;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.admin-users-page-user__fio {
+    font-weight: bold;
+    font-size: 20px;
+    color: #C4C4C4;
+}
+
+.admin-users-page-user__dop-info {
+    transition: 0.1s ease;
+    font-weight: bold;
+    font-size: 20px;
+    color: #C4C4C4;
+    opacity: 0;
+    margin: 20px 0 0 0;
+}
+
+.admin-users-page-user__email {
+    margin-bottom: 5px;
+}
+
+.admin-usesr-page-user__roles {
+}
+
+.admin-users-page-user__buttons-wrapper {
+    margin-right: 10px;
+}
+
+.admin-users-page-user__button {
+    display: inline-block;
+    padding: 13px;
+    background: #464646;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.admin-users-page-user__button:hover {
+    color: #000;
+    background: #00ff00;
+}
+
+
+.admin-users-page-user:hover {
+    height: 137px;
+}
+
+.admin-users-page-user:hover .admin-users-page-user__dop-info {
+    opacity: 1;
+}
+
+.admin-users-page-user:hover .admin-users-page-user__image-wrapper {
+    width: 137px;
+    height: 137px;
+}
+
+
+.admin-users-page-grid-users__title {
+    font-family: JetBrains Mono;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 40px;
+    color: #eee;
+    margin-bottom: 20px;
+}
+
+.admin-users-page-grid-options__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 56px;
+    color: #eee;
+}
+
+
+.admin-users-page-grid-options__content {
+    background: #242428;
+    border-radius: 10px;   
+}
+
+.admin-users-page-grid-options-content__checkbox {
+    display: none;
+}
+
+.admin-users-page-grid-options__wrapper {
+    padding: 20px;
+}
+
+
+
+
+
+
+/* checkbox styles */
+
+#banned-label, #sorted-label, #active-label {
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 40px;
+    color: #EEEEEE;
+	cursor: pointer;
+	position: relative;
+	display: block;
+}
+
+#banned-label:before, #sorted-label:before, #active-label:before  {
+	box-sizing: border-box;
+	position: absolute;
+	content: '';
+	width: 30px;
+	height: 15px;
+	background: #eee;
+	border-radius: 5px;
+	right: 0;
+	top: 25%;
+	border: 2px solid #c4c4c4;
+	transition: 0.4s ease;
+}
+
+#banned-label:after, #sorted-label:after, #active-label:after {
+	position: absolute;
+	content: '';
+	width: 15px;
+	height: 15px;
+	border-radius: 5px;
+	right: 15px;
+	top: 25%;
+	background: #c4c4c4; 
+	transition: 0.3s ease;
+}
+
+#sorted-label {
+    margin-top: 10px;
+}
+
+
+#banned, #sorted, #active {
+	display: none;
+}
+
+#banned:checked + label:before, #sorted:checked + label:before, #active:checked + label:before {
+	background: #000;
+	border: 2px solid #00ff00;
+}
+
+#banned:checked + label:after, #sorted:checked + label:after, #active:checked + label:after {
+	background: #00ff00;
+	right: 0;
+}
+
+
+/* button */
+
+.admin-users-page-grid-options__button {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    background: #464646;
+
+    font-family: Comfortaa;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    color: #EEEEEE;
+
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+.admin-users-page-grid-options__button:hover {
+    color: #000;
+    background: #00ff00;
+}
+
+
+/* title */
+
+.admin-users-page-grid-options__hide {
+    font-family: Comfortaa;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 22px;
+    color: #00ff00;
+    margin-bottom: 10px;
+ }
+
+
+ .admin-users-page__loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 300px);
+ }

@@ -1,0 +1,388 @@
+/* ========================
+        variables
+========================= */
+
+:root {
+    /* color-properties */
+    --font-color: #eee;
+    --font-size: 20px;
+    --font-weight: bold;
+    --font-style: normal;
+
+    /* builder-properties */
+    --background-color: #333335;
+    --no-active-bg-color: #464646;
+    --active-bg-color: #00ff00;
+    --active-text-color: #000;
+
+    --block-bg-color: #242428;
+}
+
+
+
+/* ====================
+        main block
+===================== */
+
+.room__main {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+
+    font-size: var(--font-size);
+    color: var(--font-color);
+    font-weight: var(--font-weight);
+
+    box-sizing: border-box;
+    padding: 90px 0;
+}
+
+.room__main * {
+    box-sizing: border-box;
+}
+
+
+
+/* ====================
+        room data
+===================== */
+
+.room__data {
+    width: min(1080px, 100vw);
+    margin: 0 auto 100px auto;
+    padding: 20px;
+
+    background: var(--background-color);
+    border-radius: 10px;
+}
+
+
+/* ===================
+    fist block
+===================== */
+.room__first-block {
+}
+
+.room-first-block__top {
+    display: flex;
+    height: 70px;
+}
+
+.room__title-block-wrapper {
+    width: 600px;
+    position: relative;
+}
+
+.room-first-block__bottom {
+    position: relative;
+    margin-bottom: -10px;
+}
+
+/* ====================
+        title block
+===================== */
+
+.room__title-block {
+    position: absolute;
+    top: -45px;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 600px;
+    padding: 28px;
+    
+    background: var(--block-bg-color);
+    border-radius: 10px;
+
+}
+
+.room-title-block__title {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.room-title-block__contributors {
+    width: 480px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #c4c4c4;
+}
+
+.room-title-block__contributors::after {
+    position: absolute;
+    content: '';
+    
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(90deg, rgba(36, 36, 40, 0) 50%, #242428 100%);
+}
+
+.room-title-block__meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    color: #C4C4C4
+}
+
+.room-title-block__more {
+    margin-top: 12px;
+    color: var(--font-color);
+
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.room-title-block__more:visited {
+    color: var(--font-color);
+}
+
+.room-title-block__more:hover {
+    color: var(--active-bg-color);
+}
+
+.room-title-block__lock {
+    fill: var(--active-bg-color);
+}
+
+
+
+/* =================
+        image
+====================*/
+
+.room__image-wrapper {
+    flex-grow: 1;
+    background: #C4C4C4;
+    border-radius: 5px;
+    margin: 0 20px 0 0;
+
+    cursor: pointer;
+}
+
+
+
+/* ==================
+    languages
+================== */
+.room__languages {
+    margin-top: 10px;
+    grid-area: languages;
+}
+
+.room__languages-title {
+    margin-top: 20px;
+}
+
+.room__language {
+    display: inline-block;
+
+    margin: 0 10px 10px 0;
+
+    padding: 10px;
+    background: var(--active-bg-color);
+    border-radius: 5px;
+    color: #000;
+}
+
+
+
+/* ===================
+        metainfo
+==================  */
+
+.room__metainfo {
+    position: absolute;
+    display: flex;
+}
+
+.room__metainfo-item {
+    display: flex;
+    align-items: center;
+
+    margin-right: 7px;
+    padding: 0 5px;
+
+    background: #000;
+    border-radius: 2px;
+    font-size: 18px;
+
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.room__metainfo-item svg {
+    fill: #fff;
+    margin-right: 5px;
+
+    transition: .3s ease;
+}
+
+.room__metainfo-likes svg {
+    height: 20px;
+    width: 19px;
+}
+
+.room__metainfo-item:hover {
+    color: #000;
+    background: #fff;
+}
+
+.room__metainfo-item:hover.room__metainfo-item svg {
+    fill: #000;
+}
+
+.room__metainfo-item:hover.room__metainfo-likes svg {
+    fill: red;
+}
+
+
+
+/* =======================
+    project information
+======================== */
+
+.room__project-info {
+    margin: 10px 0 -10px 0;
+}
+
+.room-project-info__title {
+    text-align: right;
+}
+
+.room-project-info__info-wrapper {
+    margin-top: 20px;
+}
+
+.room-project-info__item {
+    line-height: 28px;
+    padding: 20px;
+
+    background: var(--block-bg-color);
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+
+/* =====================
+        text item
+===================== */
+.room-project-info__text-item {}
+
+
+
+/* =====================
+    markdown item
+===================== */
+
+
+
+/* =====================
+        gist item
+===================== */
+
+.room-gist-block__loader {
+    display: flex;
+    justify-content: center;
+}
+
+.room-gist-block__loader div {
+    width: 20px;
+    height: 20px;
+}
+
+.room-gist-block__failed {
+    display: flex;
+}
+
+.room-gist-block__failed svg {
+    fill: red;
+    margin-right: 7px;
+}
+
+
+
+/* ====================
+    editors block
+===================== */
+
+.room__editors-block {
+
+}
+
+.room-editors-block__title {
+    text-align: right;
+    margin: 15px 0;
+}
+
+.room-editors-block__editors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.room-editors-block__no-editors {
+    height: 45px;
+
+    text-align: center;
+    line-height: 45px;
+
+    background: var(--block-bg-color);
+    border-radius: 10px;
+}
+
+
+
+/* =====================
+    contributors block
+====================== */
+
+.room__contributors-block {
+
+}
+
+.room-contributors-block__title {
+    text-align: right;
+    margin: 15px 0;
+}
+
+.room-contributors-block__contributors {
+    margin-top: 15px;
+    padding: 20px 40px;
+
+    background: var(--block-bg-color);
+    border-radius: 10px;
+}
+
+.room-contributor {
+    display: inline-block;
+
+    width: 60px;
+    height: 60px;
+
+    margin: 6px;
+
+    border-radius: 50%;
+    overflow: hidden;
+    background: #c4c4c4;
+    cursor: pointer;
+}
+
+.room-contributor > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
