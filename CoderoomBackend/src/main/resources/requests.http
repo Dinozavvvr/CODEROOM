@@ -1,0 +1,101 @@
+###
+
+# registration post request
+
+POST http://localhost:8080/api/v.1/registration
+Content-Type: application/json
+
+{
+  "email": "anton2@gmail.com",
+  "nickname": "anton2",
+  "password": "Qwerty007",
+  "name": "Anton",
+  "surname": "Sheverda"
+}
+
+###
+
+# admin registration post request
+
+POST http://localhost:8080/api/v.1/registration
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "nickname": "admin",
+  "password": "admin",
+  "name": "Admin",
+  "surname": "Admin"
+}
+
+###
+
+# login post request
+
+POST http://localhost:8080/api/v.1/login
+Content-Type: application/json
+
+{
+  "nickname": "hey_dinar",
+  "password": "Qwerty007"
+}
+
+###
+
+# admin login post request
+
+POST http://localhost:8080/api/v.1/login
+Content-Type: application/json
+
+{
+  "nickname": "admin",
+  "password": "admin"
+}
+
+###
+
+# admin page getting request
+
+GET http://localhost:8080/api/v.1/admin
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQURNSU4iLCJpYXQiOjE2MTc4MjQxNDcsImV4cCI6MTYyNTYwMDE0N30.HKfK5SrD4yvzg0UIIuu1ZKnsD4Yc7b_kwEAOc_xeTuk
+
+###
+
+# get profile info
+# eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZXlfZGluYXIiLCJhdXRob3JpdGllcyI6IlJvbGUoaWQ9MSwgbmFtZT1WSUVXRVIsIHVzZXJzPVtVc2VyKGlkPTYsIGVtYWlsPWRpbmFyLnNoYWdhbGlldjIwMDJAZ21haWwuY29tLCBuaWNrbmFtZT1oZXlfZGluYXIsIG5hbWU9RGluYXIsIHN1cm5hbWU9U2hhZ2FsaWV2LCBwYXNzd29yZD0kMmEkMTAkeTdKSWFMVTFsaDdUTUZSRkhDQ2dPLm9hMDBmbFRveW9FQ2FGVDZCRy44ZHp1cFVXb1hKNmUsIHdvcmtzcGFjZXM9W10sIHJvb21zPVtdLCBzdGF0dXM9U0lNUExFLCBzdGF0ZT1BQ1RJVkUpXSkiLCJpYXQiOjE2MTc5NzAzMzUsImV4cCI6MTYyNTc0NjMzNX0.dVAu7IRfT98-n6AkWUAswWlaVPS7piVnNkfrEh2vVOo
+
+GET http://localhost:8080/api/v.1/account
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZXlfZGluYXIiLCJhdXRob3JpdGllcyI6IlZJRVdFUixVU0VSIiwiaWF0IjoxNjE4MDM5NDk3LCJleHAiOjE2MjU4MTU0OTd9.VctTkFJLux8DqyaGYkCJsRcHzJD5dPyrV5H9f-ZcsOk
+
+###
+
+# logout
+DELETE http://localhost:8080/api/v.1/logout
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZXlfZGluYXIiLCJhdXRob3JpdGllcyI6IlZJRVdFUixVU0VSIiwiaWF0IjoxNjE4MDAyNzkwLCJleHAiOjE2MjU3Nzg3OTB9.t62pYpHmmfjklprYkopN1Wk7YwvX4HFdRY7xq3H367E
+
+###
+
+# ban put request
+
+PUT http://localhost:8080/api/v.1/users/8/unban
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQURNSU4iLCJpYXQiOjE2MTgwNDk4MDAsImV4cCI6MTYyNTgyNTgwMH0.qtMOR54_tHpXF1xzqGIJmrekrINADjjgubzOTAkVYvA
+
+###
+
+# ban all users
+
+PUT http://localhost:8080/api/v.1/users/all/ban
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiVklFV0VSIiwiaWF0IjoxNjE4MDMzNjg1LCJleHAiOjE2MjU4MDk2ODV9.aWyS3PInldQOesJYApJh4mLsEv_sRa9Y3ficqjdpda0
+
+###
+
+# unban all users
+
+PUT http://localhost:8080/api/v.1/users/all/unban
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiVklFV0VSIiwiaWF0IjoxNjE4MDMzNjg1LCJleHAiOjE2MjU4MDk2ODV9.aWyS3PInldQOesJYApJh4mLsEv_sRa9Y3ficqjdpda0
+
+###
+
+# get all users
+
+GET http://localhost:8080/api/v.1/users
